@@ -1,7 +1,15 @@
 def find_pairs(num_string):
-  # Write your solution here!
-  pass
+  nums = num_string.split()
+  nums = [int(num) for num in nums]
 
+  new_set = set()
+
+  for num1 in nums:
+    for num2 in nums:
+      if num1 < num2:
+        new_set.add((num1, num2))
+
+  return new_set
 
 # Test cases
 assert find_pairs("7 3 99") == {(7, 99), (3, 7), (3, 99)}
